@@ -1,11 +1,11 @@
-# 📘 README – CETVN Computer Inventory Script  
+# 📘 README – YCI--Your-Computer-Info-
 *(Tiếng Việt & English)*
 
 ---
 
 # 🇻🇳 GIỚI THIỆU (Tiếng Việt)
 
-`CETVN_COMPUTER_LIST` là một script **Batch + PowerShell** dùng để tự động thu thập thông tin phần cứng & hệ thống của máy tính Windows và lưu vào file CSV.  
+`YCI--Your-Computer-Info-` là một script **Batch + PowerShell** dùng để tự động thu thập thông tin phần cứng & hệ thống của máy tính Windows và lưu vào file CSV.  
 Script hỗ trợ **ghi đè hoặc cập nhật** theo tên máy tính, đồng thời **kiểm tra file CSV có đang mở hay không** để tránh lỗi ghi dữ liệu.
 
 ---
@@ -34,8 +34,9 @@ Script hỗ trợ **ghi đè hoặc cập nhật** theo tên máy tính, đồng
 
 ## 📂 File tạo ra
 
-- **CETVN_COMPUTER_LIST.csv**  
+- **YOUR_FILE_NAME.csv**  
   Được lưu tại cùng thư mục với file `.bat`.
+  (nên đổi tên file lại theo mục đích sử dụng của bạn).
 
 ---
 
@@ -75,7 +76,7 @@ Script hỗ trợ **ghi đè hoặc cập nhật** theo tên máy tính, đồng
 
 # 🇺🇸 INTRODUCTION (English)
 
-`CETVN_COMPUTER_LIST` is a **Batch + PowerShell inventory script** used to automatically scan hardware & system information on Windows computers and store the results into a CSV file.  
+`YCI--Your-Computer-Info-` is a **Batch + PowerShell inventory script** used to automatically scan hardware & system information on Windows computers and store the results into a CSV file.  
 The script supports **append/update** based on the computer name and checks whether the CSV file is currently open to avoid write errors.
 
 ---
@@ -104,8 +105,9 @@ The script supports **append/update** based on the computer name and checks whet
 
 ## 📂 Output File
 
-- **CETVN_COMPUTER_LIST.csv**  
+- **YOUR_FILE_NAME.csv**  
   Saved in the same folder as the `.bat` file.
+  (rename the file name for your own usage).
 
 ---
 
