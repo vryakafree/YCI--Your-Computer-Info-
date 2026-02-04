@@ -1,6 +1,52 @@
 @echo off
 setlocal EnableDelayedExpansion
 
+rem === Ensure UTF-8 for box-drawing characters ===
+chcp 65001 >nul
+
+rem === Capture the ESC character into %ESC% ===
+for /F "delims=" %%A in ('echo prompt $E^| cmd') do set "ESC=%%A"
+
+rem === Optional: enable Virtual Terminal processing via registry (no admin needed) ===
+rem This helps classic conhost honor ANSI sequences on newer Windows.
+reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1 /f >nul 2>&1
+
+rem === Define color sequences ===
+set "RST=%ESC%[0m"
+set "BLUE=%ESC%[34m"
+set "YEL=%ESC%[33m"
+
+rem 256-color brown approximation (falls back visually to yellow if not supported)
+set "BROWN256=%ESC%[38;5;94m"
+
+cls
+
+rem ====== Box Header ======
+echo  ╔═════════════════════════════════════════════════════════════════════════╗
+echo  ║                                                                         ║
+echo  ║                         ██╗  ██╗ █████╗██████╗                          ║
+echo  ║                         ██║  ██║██╔═══╝  ██╔═╝                          ║
+echo  ║                         ╚██ ██╔╝██║      ██║                            ║
+echo  ║                          ╚██╔═╝ ██║      ██║                            ║
+echo  ║                           ██║   ╚█████╗██████╗                          ║
+echo  ║                           ╚═╝    ╚════╝╚═════╝                          ║
+echo  ║                                                                         ║
+echo  ║                                                                         ║
+echo  ╚═════════════════════════════════════════════════════════════════════════╝
+
+echo(
+echo                                 ──  Y C I  ──
+echo                               Your Computer Info
+echo(
+
+rem === Small info lines with colors ===
+rem version: "1.0" in brown (256-color), resets after
+echo  version !BROWN256!1.0!RST!
+
+rem Author line:
+rem "Copilot, Gemini" in blue; "DiEn" in yellow; escape the ampersand with ^
+echo  Author: !BLUE!Copilot!RST!, !BLUE!Gemini!RST! ^& !YEL!DiEn!RST!
+
 :: --- THIET LAP FILE XUAT ---
 set "FileName=YOUR_FILE_NAME.csv"
 set "OutPath=%~dp0%FileName%"
@@ -84,5 +130,6 @@ if exist "%OutPath%" (
     echo.
     echo LOI: Khong the ghi du lieu.
 )
+
 
 pause
